@@ -16,3 +16,7 @@ Select st_transform(geom, 4326) from table_name;
 --Mevcut bir tabloya geometri sütunu eklemek için kullanılması gereken komut nedir?
 SELECT AddGeometryColumn('public', 'mytable', 'geom', 4326, 'POINT', 2); 
 (Select addgeometrycolumn ('schema_name', 'table_name', 'new_column_name', 'SRID', 'geometry_type', '2D-3D'))
+
+--Mevcut tablodaki sütunun SRID değeri dönüştürülebilir. Örneğin: NYC Tablosundaki geom sütunu SRID değerinin 4326'ya dönüştürülmesi için gerekli komut nedir?
+Select st_transform (geom, 4326) as new geom from nyc;
+Select st_transform (donusturulecek_sutun, yenı_srid_degeri) as yeni_sutun_adı from tablo_adı;
